@@ -69,3 +69,36 @@ describe('walk', () => {
         expect(pet.fitness).toEqual(10);
     });
 });
+
+describe('feed', () => {
+    it('reduce hunger by 3 when fed', () => {
+        const pet = new Pet('Pippy');
+
+        pet.hunger = 6;
+        pet.feed();
+
+        expect(pet.hunger).toEqual(3);
+    });
+});
+    
+    describe('feed', () => {
+    it('reduce hunger by 3 when fed', () => {
+        const pet = new Pet('Pippy');
+
+        pet.hunger = 9;
+        pet.feed();
+
+        expect(pet.hunger).toEqual(6);
+    });
+});
+
+    describe('feed', () => {
+    it('reduce hunger by 3 when fed', () => {
+        const pet = new Pet('Pippy');
+
+        pet.hunger = 5;
+        pet.feed();
+
+        expect(pet.hunger).toEqual(2);
+    });
+})
