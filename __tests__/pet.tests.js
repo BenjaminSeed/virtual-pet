@@ -140,6 +140,9 @@ describe('checkup', () => {
 describe('checkup', () => {
     it('returns string I feel great if none of the above are true', () => {
         const pet = new Pet('Pippy');
+        pet.hunger = 2;
+        pet.fitness = 9;
+        pet.checkup();
          expect(pet.checkup()).toEqual('I feel great!')
     });
 })
