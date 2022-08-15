@@ -5,13 +5,18 @@ const REDUCE_HUNGER = 3
 const MINIMUM_FITNESS = 3
 
 function Pet(name, age) {
+
     this.name = name;
     this.age = 0;
     this.hunger = 0;
     this.fitness = 10;
-}
-// this.name = name, this refers to the object returned from
-// by calling new Pet(), so this.name refers to the name property of that object
+};
+
+   Pet.prototype = {
+    get isAlive() {
+      return this.age < 30 && this.hunger < 10 && this.fitness > 0;
+    }
+  };
 
 Pet.prototype.growUp = function() {
     this.age += 1;
@@ -56,6 +61,10 @@ Pet.prototype.checkup = function() {
     }
 
 };
+
+Pet.prototype.isAlive = function() {
+
+}
 
 
 

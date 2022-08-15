@@ -146,3 +146,15 @@ describe('checkup', () => {
          expect(pet.checkup()).toEqual('I feel great!')
     });
 })
+
+describe('isAlive', () => {
+    it('returns false if pet is not alive', () => {
+        const pet = new Pet('Pippy');
+
+        pet.fitness = 0;
+        pet.hunger = 10;
+        pet.age = 30;
+
+         expect(pet.isAlive).toEqual(false)
+    });
+})
