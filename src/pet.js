@@ -20,18 +20,14 @@ function Pet(name, age) {
   };
 
 Pet.prototype.growUp = function() {
-    if (!this.isAlive) {
-        throw new Error(DEAD_PIPPY)
-    }
+    if (!this.isAlive) throw new Error(DEAD_PIPPY);
     this.age += 1;
     this.hunger += 5;
     this.fitness -= 3;
 };
 
 Pet.prototype.walk = function() {
-    if (!this.isAlive) {
-        throw new Error(DEAD_PIPPY)
-    }
+    if (!this.isAlive) throw new Error(DEAD_PIPPY);
    if ((this.fitness + WALKING) <= MAXIMUM_FITNESS ) {
     this.fitness += WALKING;
     } else {
@@ -40,9 +36,7 @@ Pet.prototype.walk = function() {
 };
 
 Pet.prototype.feed = function() {
-    if (!this.isAlive) {
-        throw new Error(DEAD_PIPPY)
-    }
+    if (!this.isAlive) throw new Error(DEAD_PIPPY);
     if ((this.hunger - REDUCE_HUNGER) <= MAXIMUM_HUNGER) {
         this.hunger -= REDUCE_HUNGER;
     } else {
@@ -61,13 +55,6 @@ Pet.prototype.checkup = function() {
 
     return 'I feel great!'
     
-
 };
-
-Pet.prototype.isAlive = function() {
-
-}
-
-
 
 module.exports = Pet;
