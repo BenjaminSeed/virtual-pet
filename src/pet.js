@@ -11,6 +11,7 @@ function Pet(name, age) {
     this.age = 0;
     this.hunger = 0;
     this.fitness = 10;
+    this.children = [];
 };
 
    Pet.prototype = {
@@ -49,6 +50,7 @@ const feedMe = 'I am Hungry!';
 const hungryWalk = 'I am hungry AND I need a walk!';
 
 Pet.prototype.checkup = function() {
+    if (!this.isAlive) throw new Error(DEAD_PIPPY);
     if (this.hunger >= 5 && this.fitness <= 3) return hungryWalk;
     if (this.fitness <= MINIMUM_FITNESS) return run;
     if (this.hunger >= 5) return feedMe;
@@ -56,5 +58,6 @@ Pet.prototype.checkup = function() {
     return 'I feel great!'
     
 };
+
 
 module.exports = Pet;

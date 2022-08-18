@@ -188,3 +188,4 @@ describe('growUP', () => {
         expect(() => pet.growUp()).toThrow('Your pet is no longer alive :(');
     }); 
 });
+
